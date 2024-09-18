@@ -55,7 +55,7 @@ exports.parkVehicle = async (req, res) => {
       return res.status(404).json({ message: 'Parking data not found' });
     }
 
-    const floor = parkingData.floors.find(floor => floor.vehicles.length < 5);
+    const floor = parkingData.floors.find(floor => floor.vehicles.length < 10);
 
     if (!floor) {
       return res.status(400).json({ message: 'No parking space available on any floor' });
