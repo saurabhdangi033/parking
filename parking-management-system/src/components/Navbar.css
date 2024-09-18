@@ -1,0 +1,96 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(45deg, #0b0015, #02163a); /* Gradient background */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.navbar:hover {
+  background: linear-gradient(45deg, #2575fc, #0a0015); /* Color flip on hover */
+}
+
+/* Logo styling */
+.navbar-logo {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Navbar links styling */
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-links li {
+  margin: 0 15px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 900;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease-in-out;
+}
+
+.navbar-links a:hover {
+  color: #ffe400;
+  transform: scale(1.1);
+}
+
+/* Add hover underline effect */
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #ffe400;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  .navbar-links li {
+    margin: 10px 0;
+  }
+}
